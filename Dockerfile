@@ -7,4 +7,6 @@ RUN tar -xzf dynamodb_local_latest.tar.gz -C /usr/local/dynamodb
 
 EXPOSE 8000
 
+WORKDIR /usr/local/dynamodb
+
 ENTRYPOINT ["/usr/bin/java", "-Djava.library.path=/usr/local/dynamodb/DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar", "-sharedDb"]
